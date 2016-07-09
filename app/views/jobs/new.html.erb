@@ -1,5 +1,8 @@
 <section>
   <h1>Cria vaga</h1>
+  <div>
+    <%= flash[:notice] %>
+  </div>
   <%= form_for @job do |f| %>
 
     <div>
