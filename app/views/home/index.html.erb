@@ -4,11 +4,18 @@
       <h1><%= job.title %></h1>
     </div>
     <div>
+      <% if job.featured? %>
+        <strong>'Vaga em Destaque'</strong>
+      <% end %>
+    </div>
+    <div>
       <%= job.company %>
     </div>
     <div>
       <%= job.location %>
     </div>
-    <%= link_to job.title, job%>
+    <div>
+      <%= link_to job.title, job%>
+    </div>
   <% end %>
 </section>
