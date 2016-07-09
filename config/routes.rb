@@ -2,5 +2,5 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  resources :jobs, only: [:new]
+  resources :jobs, only: [:new, :show]
 end

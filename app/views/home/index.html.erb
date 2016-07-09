@@ -1,8 +1,14 @@
 <section>
-  <div>
-    <h1>Vaga de Dev</h1> - Campus Code - São Paulo
-  </div>
-  <div>
-    <h1>UX Senior</h1> - Facebook
-  </div>
+  <% @jobs.each do |job| %>
+    <div>
+      <h1><%= job.title %></h1>
+    </div>
+    <div>
+      <%= job.company %>
+    </div>
+    <div>
+      <%= job.location %>
+    </div>
+    <%= link_to job.title, job%>
+  <% end %>
 </section>
