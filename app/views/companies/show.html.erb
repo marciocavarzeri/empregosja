@@ -1,10 +1,16 @@
 <section>
   <%= notice %>
   <div>
-    <h1><%=@company.name%></h1>
+    <h1><%= @company.name %></h1>
   </div>
   <div>
-    <%=@company.location%>
+    <%= @company.location %>
+  </div>
+  <div>
+    <%= @company.mail %>
+  </div>
+  <div>
+    <%= @company.phone %>
   </div>
   <div>
     <% @jobs.each do |job| %>
