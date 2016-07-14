@@ -9,7 +9,12 @@
   </head>
 
   <body>
-    <h1>Emprego Já</h1>
-    <%= yield %>
+    <div class="container">
+      <header>
+        <h1>Emprego Já</h1>
+      </header>
+      <span><%= notice %></span>
+      <%= yield %>
+   </div>
   </body>
 </html>
