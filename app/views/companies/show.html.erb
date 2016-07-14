@@ -1,0 +1,18 @@
+<section>
+  <%= notice %>
+  <div>
+    <h1><%=@company.name%></h1>
+  </div>
+  <div>
+    <%=@company.location%>
+  </div>
+  <div>
+    <% @jobs.each do |job| %>
+        <%=job.title%>
+        <%=job.category.name%>
+    <% end %>
+  </div>
+  <div>
+    <%= link_to 'Voltar', root_path%>
+  </div>
+</section
