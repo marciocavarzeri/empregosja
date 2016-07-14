@@ -11,6 +11,7 @@ class JobsController < ApplicationController
     if @job.save
       redirect_to @job
     else
+      set_collections
       flash[:notice] = "Não foi possível criar a vaga"
       render 'new'
     end
@@ -26,6 +27,7 @@ class JobsController < ApplicationController
     if @job.update(job_params)
       redirect_to @job
     else
+      set_collections
       flash.now[:notice] = 'Não foi possível atualizar a vaga'
       render 'edit'
     end

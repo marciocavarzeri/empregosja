@@ -1,40 +1,5 @@
 <section>
-  <h1>Cria vaga</h1>
-  <%= form_for @job do |f| %>
+  <h1>Criar uma vaga</h1>
+  <%= render partial: 'form', locals: {submit_text: 'Criar Vaga'} %>
 
-    <div>
-      <%= f.label :title, 'Título' %>
-      <%= f.text_field :title %>
-    </div>
-
-    <div>
-      <%= f.label :location, 'Local' %>
-      <%= f.text_field :location %>
-    </div>
-
-    <div>
-      <%= f.label :category_id, 'Categoria' %>
-      <%= f.collection_select(:category_id, Category.all, :id, :name) %>
-    </div>
-
-    <div>
-      <%= f.label :company_id, 'Empresa' %>
-      <%= f.collection_select(:company_id, Company.all, :id, :name) %>
-    </div>
-
-    <div>
-      <%= f.label :description, 'Descrição' %>
-      <%= f.text_field :description %>
-    </div>
-
-    <div>
-      <%= f.label :featured, 'Vaga em Destaque' %>
-      <%= f.check_box :featured %>
-    </div>
-
-    <div>
-      <%= f.submit('Criar Vaga') %>
-    </div>
-
-  <% end %>
 </section>

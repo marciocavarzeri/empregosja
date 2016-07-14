@@ -1,29 +1,40 @@
-<section>
-  <% @companies.each do |company| %>
-    <%= link_to company.name, company %>
-  <% end %>
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<ul class="nav navbar-nav">
+				<li><%= link_to "Criar Vagas", new_job_path %></li>
+				<li><%= link_to "Criar Empresas", new_company_path %></li>
+			</ul>
+		</div>
+	</div>
+</nav>
 
-  <% @categories.each do |category| %>
-    <%= link_to category.name, category %>
-  <% end %>
-
-  <% @jobs.each do |job| %>
-    <div>
-      <h1><%= job.title %></h1>
-    </div>
-    <div>
-      <% if job.featured? %>
-        <strong>'Vaga em Destaque'</strong>
-      <% end %>
-    </div>
-    <div>
-      <%= job.company.name %>
-    </div>
-    <div>
-      <%= job.location %>
-    </div>
-    <div>
-      <%= link_to job.title, job%>
-    </div>
-  <% end %>
-</section>
+<div class="row">
+	<div class="col-md-9">
+		<section>
+			<div class="row">
+				<% @jobs.each do |job| %>
+					<div class="col-md-6">
+						<%= render job%>
+					</div>
+				<% end %>
+			</div>
+		</section>
+	</div>
+	<div class="col-md-3">
+		<aside>
+			<h3>Empresas</h3>
+			<div>
+				<% @companies.each do |company| %>
+					<%= link_to company.name, company %></br>
+				<% end %>
+			</div>
+			<h3>Categorias</h3>
+			<div>
+				<% @categories.each do |category| %>
+					<%= link_to category.name, category%>
+				<% end %>
+			</div>
+		</aside>
+	</div>
+</div>
