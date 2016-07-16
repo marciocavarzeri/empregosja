@@ -5,5 +5,4 @@ class Company < ApplicationRecord
   def premium?
     jobs.count >= 5
   end
-
 end
