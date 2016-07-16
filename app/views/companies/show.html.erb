@@ -6,6 +6,9 @@
   	<dd><%= @company.mail %></dd>
   	<dd><%= @company.phone %></dd>
   </dl>
+  <div>
+    <%= link_to 'Editar', edit_job_path, class: "btn btn-default" %>
+  </div>
 </div>
 <div>
 	<%= render @jobs%>
