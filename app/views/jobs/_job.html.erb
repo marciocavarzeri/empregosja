@@ -1,8 +1,34 @@
-<h1><%= link_to job.title, job %>
-   <% if job.featured? %>
-     <strong><%= '(Destaque)' %></strong>
-   <% end %>
- </h1>
- <%= job.company.name %><br>
- <%= job.location %><br>
- <%= job.category.name %><br>
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <%= link_to job.title, job %>
+    <% if job.featured? %>
+      <strong><%= '(Destaque)' %></strong>
+    <% end %>
+  </div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-md-3">
+        <strong>Empresa:</strong>
+      </div>
+      <div class="col-md-9">
+        <%= job.company.name %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <strong>Local:</strong>
+      </div>
+      <div class="col-md-9">
+        <%= job.location %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <strong>Categoria:</strong>
+      </div>
+      <div class="col-md-9">
+        <%= job.category.name %>
+      </div>
+    </div>
+  </div>
+</div>

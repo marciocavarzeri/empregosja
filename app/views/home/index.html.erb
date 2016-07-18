@@ -1,22 +1,10 @@
-<nav class="navbar navbar-default">
-	<div class="container-fluid">
-		<div class="navbar-header">
-			<ul class="nav navbar-nav">
-				<li><%= link_to "Criar Vagas", new_job_path %></li>
-				<li><%= link_to "Criar Empresas", new_company_path %></li>
-        <li><%= link_to "Criar Categorias", new_category_path %></li>
-			</ul>
-		</div>
-	</div>
-</nav>
-
 <div class="row">
 	<div class="col-md-9">
 		<section>
 			<div class="row">
 				<% @jobs.each do |job| %>
 					<div class="col-md-6">
-						<%= render job%>
+            <%= render job%>
 					</div>
 				<% end %>
 			</div>
@@ -24,16 +12,16 @@
 	</div>
 	<div class="col-md-3">
 		<aside>
-			<h3>Empresas</h3>
-			<div>
+			<h4 class="list-group-item active">Empresas</h4>
+			<div class="list-group table-of-contents">
 				<% @companies.each do |company| %>
-					<%= link_to company.name, company %></br>
+					<%= link_to company.name, company, class: 'list-group-item' %>
 				<% end %>
 			</div>
-			<h3>Categorias</h3>
-			<div>
+			<h4 class="list-group-item active">Categorias</h4>
+			<div class="list-group table-of-contents">
 				<% @categories.each do |category| %>
-					<%= link_to category.name, category%>
+					<%= link_to category.name, category, class: 'list-group-item'%>
 				<% end %>
 			</div>
 		</aside>

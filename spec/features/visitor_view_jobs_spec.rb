@@ -27,10 +27,10 @@ feature 'Visitor view jobs on home page' do
                                      featured: true)
     visit root_path
 
-    expect(page).to have_css('h1',text: job.title)
+    expect(page).to have_css('div',text: job.title)
     expect(page).to have_content(job.company.name)
     expect(page).not_to have_content(job.description)
-    expect(page).to have_css('h1',text: another_job.title)
+    expect(page).to have_css('div',text: another_job.title)
     expect(page).to have_content(another_job.company.name)
     expect(page).to have_css('strong', text: 'Destaque')
     expect(page).not_to have_content(another_job.description)
