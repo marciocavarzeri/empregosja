@@ -2,18 +2,9 @@ require 'rails_helper'
 
 feature 'Visitor visits job details' do
   scenario 'successfully' do
-    company = Company.create(name: 'Campus Code',
-                             location: 'São Paulo',
-                             mail: 'contato@campus.com.br',
-                             phone: '2369-3476')
-
-    category = Category.create(name: 'Desenvolvedor')
-
-    job = Job.create(title: 'Vaga de Dev',
-                     category: category,
-                     company: company,
-                     description: 'Dev Junior Rails com ao menos um projeto',
-                     location: 'São Paulo')
+    job = FactoryGirl.create(:job, title: 'Vaga de Dev')
+    category = job.category
+    company = job.company
 
     visit root_path
 
@@ -27,18 +18,9 @@ feature 'Visitor visits job details' do
   end
 
   scenario 'and return to home' do
-    company = Company.create(name: 'Campus Code',
-                             location: 'São Paulo',
-                             mail: 'contato@campus.com.br',
-                             phone: '2369-3476')
-
-    category = Category.create(name: 'Desenvolvedor')
-
-    job = Job.create(title: 'Vaga de Dev',
-                     category: category,
-                     company: company,
-                     description: 'Dev Junior Rails com ao menos um projeto',
-                     location: 'São Paulo')
+    job = FactoryGirl.create(:job)
+    category = job.category
+    company = job.company
 
     visit job_path(job)
 

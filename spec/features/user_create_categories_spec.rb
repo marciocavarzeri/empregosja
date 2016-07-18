@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'User create category' do
   scenario 'successfully' do
-    category = Category.new(name: 'Junior')
+    category = FactoryGirl.create(:category)
 
     visit new_category_path
 

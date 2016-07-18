@@ -2,18 +2,10 @@ require 'rails_helper'
 
 feature 'Visitor view premium companies' do
   scenario 'successfully' do
-    company = Company.create(name: 'Campus Code',
-                              location: 'São Paulo',
-                              phone: '11 2369 3476',
-                              mail: 'contato@campuscode.com.br')
-
-    category = Category.create(name: 'Desenvolvedor')
+    company = FactoryGirl.create(:company)
 
     5.times do
-      company.jobs.create(title: 'Desenvolvedor Rails',
-                           description: 'Desenvolvedor Full Stack Rails',
-                           location: 'São Paulo - SP',
-                           category: category)
+      FactoryGirl.create(:job, company: company)
     end
 
     visit root_path
@@ -25,10 +17,8 @@ feature 'Visitor view premium companies' do
   end
 
   scenario 'not premium' do
-    company = Company.create(name: 'Campus Code',
-                            location: 'São Paulo',
-                            phone: '11 2369 3476',
-                            mail: 'contato@campuscode.com.br')
+    company = FactoryGirl.create(:company)
+
     visit root_path
 
     click_on company.name

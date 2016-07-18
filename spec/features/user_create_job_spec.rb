@@ -2,16 +2,9 @@ require 'rails_helper'
 
 feature 'User create jobs' do
   scenario 'successfully' do
-    company = Company.create(name: 'Campus Code',
-                             location: 'São Paulo',
-                             mail: 'contato@campus.com.br',
-                             phone: '2369-3476')
-
-    category = Category.create(name: 'Desenvolvedor')
-
-    job = Job.new(title: 'Dev Master',
-                  location: 'Rio de Janeiro',
-                  description: 'Vaga para Dev Master para Bootcamp Rails')
+    job = FactoryGirl.build(:job)
+    category = job.category
+    company = job.company
 
     visit new_job_path
 
@@ -31,16 +24,9 @@ feature 'User create jobs' do
   end
 
   scenario 'and mark as featured' do
-    company = Company.create(name: 'Campus Code',
-                             location: 'São Paulo',
-                             mail: 'contato@campus.com.br',
-                             phone: '2369-3476')
-
-    category = Category.create(name: 'Desenvolvedor')
-
-    job = Job.new(title: 'Dev Master',
-                  location: 'Rio de Janeiro',
-                  description: 'Vaga para Dev Master para Bootcamp Rails')
+    job = FactoryGirl.build(:job)
+    category = job.category
+    company = job.company
 
     visit new_job_path
 
